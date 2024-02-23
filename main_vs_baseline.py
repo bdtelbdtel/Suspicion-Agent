@@ -73,7 +73,7 @@ def run(args):
                     "Invalid configuration, please provide a valid one", style="red"
                 )
                 agent_file = Prompt.ask(
-                    "Enter the path to the agent configuration file", default="./agent.json"
+                    "Enter the path to the agent configuration file", default="/content/Suspicion-Agent/agent.json"
                 )
                 continue
         agent_configs.append(agent_config)
@@ -96,7 +96,7 @@ def run(args):
                 "Invalid configuration, please provide a valid one", style="red"
             )
             game_config = Prompt.ask(
-                "Enter the path to the agent configuration file", default="./agent.json"
+                "Enter the path to the agent configuration file", default="/content/Suspicion-Agent/agent.json"
             )
             continue
 
@@ -225,9 +225,9 @@ if __name__ == "__main__":
         prog='Suspicion Agent',
         description='Playing Imperfect Information Games with LLM',
         epilog='Text at the bottom of help')
-    parser.add_argument("--player1_config", default="./person_config/Persuader.json", help="experiments name")
-    parser.add_argument("--player2_config", default="./person_config/GoodGuy.json", help="experiments name")
-    parser.add_argument("--game_config", default="./game_config/leduc_limit.json", help="./game_config/leduc_limit.json, ./game_config/limit_holdem.json, ./game_config/coup.json")
+    parser.add_argument("--player1_config", default="/content/Suspicion-Agent/person_config/Persuader.json", help="experiments name")
+    parser.add_argument("--player2_config", default="/content/Suspicion-Agent/person_config/GoodGuy.json", help="experiments name")
+    parser.add_argument("--game_config", default="/content/Suspicion-Agent/game_config/leduc_limit.json", help="/content/Suspicion-Agent/game_config/leduc_limit.json, ./game_config/limit_holdem.json, ./game_config/coup.json")
     parser.add_argument("--seed", type=int, default=1, help="random_seed")
     parser.add_argument("--llm", default="openai-gpt-4-0613", help="environment flag, openai-gpt-4-0613 or openai-gpt-3.5-turbo")
     parser.add_argument("--rule_model", default="cfr", help="rule model: cfr or nfsp or dqn or dmc")
